@@ -27,6 +27,12 @@
             <artifactId>deeplearning4j-nlp</artifactId>
             <version>1.0.0-beta5</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.nd4j/nd4j-api -->
+        <dependency>
+            <groupId>org.nd4j</groupId>
+            <artifactId>nd4j-api</artifactId>
+            <version>1.0.0-beta5</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.deeplearning4j/gym-java-client -->
         <dependency>
             <groupId>org.deeplearning4j</groupId>
@@ -50,11 +56,13 @@
             <artifactId>rl4j-core</artifactId>
             <version>1.0.0-beta5</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.nd4j/nd4j-cuda-10.0 -->
         <dependency>
             <groupId>org.nd4j</groupId>
-            <artifactId>nd4j-cuda-10.1</artifactId>
-            <version>1.0.0-beta5</version>
+            <artifactId>nd4j-cuda-10.0</artifactId>
+            <version>1.0.0-beta3</version>
         </dependency>
+
     </dependencies>
 
     <build>
