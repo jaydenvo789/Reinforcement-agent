@@ -8,6 +8,9 @@ import org.deeplearning4j.rl4j.util.DataManager;
 import org.nd4j.linalg.learning.config.RmsProp;
 import org.deeplearning4j.rl4j.network.dqn.DQN;
 import org.deeplearning4j.rl4j.network.dqn.IDQN;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.Random;
 
 import java.io.IOException;
@@ -78,6 +81,10 @@ public class Learn {
             dql = new QLearningDiscreteDense<LoveLetter>(mdp, dqn, Love_QL, dataManager);
             dql.train();
             dql.getPolicy().save("loveletter.model");
+            BufferedWriter writer = new BufferedWriter(new FileWriter("eliminated.txt", true));
+            writer.append(Integer.toString(mdp.numIllegalMovesMade));
+            writer.newLine();
+            writer.close();
             mdp.close();
         }
 

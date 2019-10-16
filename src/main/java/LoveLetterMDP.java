@@ -8,6 +8,7 @@ public class LoveLetterMDP implements MDP<LoveLetter, Integer, DiscreteSpace> {
 
     private LoveLetter game;
     private boolean trainIllegalMoves;
+    public int numIllegalMovesMade;
     final protected DiscreteSpace discreteSpace;
     final protected ObservationSpace<LoveLetter> observationSpace;
 
@@ -20,6 +21,7 @@ public class LoveLetterMDP implements MDP<LoveLetter, Integer, DiscreteSpace> {
     {
         this.game = game;
         this.trainIllegalMoves = trainIllegalMoves;
+        this.numIllegalMovesMade = 0;
         discreteSpace = new DiscreteSpace(37); // 40 Possible actions
         observationSpace = new ArrayObservationSpace<>(new int[] {22} );
     }
@@ -66,6 +68,7 @@ public class LoveLetterMDP implements MDP<LoveLetter, Integer, DiscreteSpace> {
                 if(game.hasPlayedIllegalMove() || (game.getScore() == 0 && !trainIllegalMoves))
                 {
                     reward = -1;
+                    this.numIllegalMovesMade +=1;
                 }
                 else
                 {
