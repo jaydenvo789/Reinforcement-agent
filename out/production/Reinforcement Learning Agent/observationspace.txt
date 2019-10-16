@@ -1,0 +1,20 @@
+Player right 1 eliminated
+Player right 2 eliminated
+Player right 3 eliminated
+Last Discard right 1
+Last Discard right 2
+Last Discard right 3
+Card right 1
+Card right 2
+Card right 3
+Num Guards Left
+Num Priests Left
+Num Barons left
+Num Handmaidens left
+Num Prince
+Num King
+Num COUNTESS
+Num Princess
+protected by handmaiden right 1
+protected by handmaiden right 2
+protected by handmaiden right 3

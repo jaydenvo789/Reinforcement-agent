@@ -1,0 +1,40 @@
+Guard right 1 guard
+Guard right 1 priest
+Guard right 1 baron
+Guard right 1 handmaiden
+Guard right 1 prince
+Guard right 1 king
+Guard right 1 countess
+Guard right 1 princess
+Guard right 2 guard
+Guard right 2 priest
+Guard right 2 baron
+Guard right 2 handmaiden
+Guard right 2 prince
+Guard right 2 king
+Guard right 2 countess
+Guard right 2 princess
+Guard right 3 guard
+Guard right 3 priest
+Guard right 3 baron
+Guard right 3 handmaiden
+Guard right 3 prince
+Guard right 3 king
+Guard right 3 countess
+Guard right 3 princess
+Priest right 1
+Priest right 2
+Priest right 3
+Baron right 1
+Baron right 2
+Baron right 3
+handmaiden
+Prince yourself
+Price right 1
+Prince right 2
+Prince right 3
+King right 1
+King right 2
+King right 3
+Countess
+Princess
