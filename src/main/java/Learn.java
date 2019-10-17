@@ -25,7 +25,7 @@ public class Learn {
                     20,    //Max step By epoch
                     20000, //Max step
                     2000, //Max size of experience replay
-                    32,     //size of batches
+                    128,     //size of batches
                     500,    //target update (hard)
                     10,     //num step noop warmup
                     0.01,   //reward scaling
