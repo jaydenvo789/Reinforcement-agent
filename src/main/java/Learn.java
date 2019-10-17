@@ -25,7 +25,7 @@ public class Learn {
                     20,    //Max step By epoch
                     20000, //Max step
                     2000, //Max size of experience replay
-                    128,     //size of batches
+                    32,     //size of batches
                     500,    //target update (hard)
                     10,     //num step noop warmup
                     0.01,   //reward scaling
@@ -49,9 +49,9 @@ public class Learn {
             DQNFactoryStdDense.Configuration LOVE_NET =
                     DQNFactoryStdDense.Configuration.builder()
                             .l2(0).updater(new
-                            RmsProp(0.01))
+                            RmsProp(0.001))
                             .numHiddenNodes(256)
-                            .numLayer(3)
+                            .numLayer(2)
                             .build();
             mdp = new LoveLetterMDP();
             dql = new QLearningDiscreteDense<LoveLetter>(mdp, LOVE_NET, Love_QL, dataManager);
