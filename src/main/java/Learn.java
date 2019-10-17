@@ -70,7 +70,7 @@ public class Learn {
             System.out.println("Illegal Move Training Complete!");
         }
 
-        while(true)
+        for(int i = 0; i < 1000; i++)
         {
             System.out.println("ROUND---------------------------");
             IDQN dqn = DQN.load("loveletter.model");
