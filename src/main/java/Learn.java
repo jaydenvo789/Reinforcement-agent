@@ -76,7 +76,7 @@ public class Learn {
             IDQN dqn = DQN.load("loveletter.model");
             Agent[] agents= new Agent[]{new ReinforcementAgent(),new RandomAgent(),new RandomAgent(),new RandomAgent()};
             Random rand = new Random(System.currentTimeMillis());
-            LoveLetter game = new LoveLetter(agents, 1);
+            LoveLetter game = new LoveLetter(agents, 0);
             mdp = new LoveLetterMDP(game,true);
             dql = new QLearningDiscreteDense<LoveLetter>(mdp, dqn, Love_QL, dataManager);
             dql.train();
