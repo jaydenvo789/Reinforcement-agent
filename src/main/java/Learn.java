@@ -32,7 +32,7 @@ public class Learn {
                     0.9,   //gamma
                     1.0,    //td-error clipping
                     0.1f,   //min epsilon
-                    1000,   //num step for eps greedy anneal
+                    4000,   //num step for eps greedy anneal
                     true    //double DQN
             );
 
@@ -70,9 +70,9 @@ public class Learn {
             System.out.println("Illegal Move Training Complete!");
         }
 
-        for(int i = 0; i< 10; i++)
+        while(true)
         {
-            System.out.println("ROUND " + i);
+            System.out.println("ROUND---------------------------");
             IDQN dqn = DQN.load("loveletter.model");
             Agent[] agents= new Agent[]{new ReinforcementAgent(),new RandomAgent(),new RandomAgent(),new RandomAgent()};
             Random rand = new Random(System.currentTimeMillis());
