@@ -22,7 +22,7 @@ public class Learn {
     public static QLearning.QLConfiguration Love_QL =
             new QLearning.QLConfiguration(
                     123,    //Random seed
-                    20,    //Max step By epoch
+                    30,    //Max step By epoch
                     20000, //Max step
                     2000, //Max size of experience replay
                     32,     //size of batches
