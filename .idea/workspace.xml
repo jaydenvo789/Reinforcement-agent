@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4b3f91b4-8eb0-4449-9dbd-1511fabf2191" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loveletter.model" beforeDir="false" afterPath="$PROJECT_DIR$/loveletter.model" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Learn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Learn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LoveLetterMDP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LoveLetterMDP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Learn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Learn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoveLetterMDP.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LoveLetterMDP.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -136,15 +140,15 @@
           <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/LoveLetterMDP.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <condition expression="reward == 0" language="JAVA" />
+          <condition expression="reward == 0 &amp;&amp; isDone()" language="JAVA" />
           <url>file://$PROJECT_DIR$/src/main/java/LoveLetterMDP.java</url>
           <line>77</line>
-          <option name="timeStamp" value="57" />
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/LoveLetterMDP.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
