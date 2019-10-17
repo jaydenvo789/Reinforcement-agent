@@ -8,7 +8,7 @@ import org.deeplearning4j.rl4j.util.DataManager;
 import org.nd4j.linalg.learning.config.RmsProp;
 import org.deeplearning4j.rl4j.network.dqn.DQN;
 import org.deeplearning4j.rl4j.network.dqn.IDQN;
-
+import org.nd4j.jita.conf.CudaEnvironment;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.util.Random;
@@ -37,6 +37,7 @@ public class Learn {
             );
 
     public static void main(String[] args) throws IOException {
+        CudaEnvironment.getInstance().getConfiguration().allowMultiGPU(true);
         train();
     }
 
