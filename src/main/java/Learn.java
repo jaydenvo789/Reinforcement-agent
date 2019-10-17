@@ -49,9 +49,9 @@ public class Learn {
             DQNFactoryStdDense.Configuration LOVE_NET =
                     DQNFactoryStdDense.Configuration.builder()
                             .l2(0).updater(new
-                            RmsProp(0.001))
+                            RmsProp(0.01))
                             .numHiddenNodes(256)
-                            .numLayer(2)
+                            .numLayer(3)
                             .build();
             mdp = new LoveLetterMDP();
             dql = new QLearningDiscreteDense<LoveLetter>(mdp, LOVE_NET, Love_QL, dataManager);
