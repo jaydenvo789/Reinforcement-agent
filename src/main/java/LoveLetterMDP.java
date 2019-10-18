@@ -7,21 +7,13 @@ import org.deeplearning4j.rl4j.space.ArrayObservationSpace;
 public class LoveLetterMDP implements MDP<LoveLetter, Integer, DiscreteSpace> {
 
     private LoveLetter game;
-    private boolean trainIllegalMoves;
-    public int numIllegalMovesMade;
     final protected DiscreteSpace discreteSpace;
     final protected ObservationSpace<LoveLetter> observationSpace;
 
-    public LoveLetterMDP()
-    {
-        this(new LoveLetter(),false);
-    }
 
-    public LoveLetterMDP(LoveLetter game,boolean trainIllegalMoves)
+    public LoveLetterMDP(LoveLetter game)
     {
         this.game = game;
-        this.trainIllegalMoves = trainIllegalMoves;
-        this.numIllegalMovesMade = 0;
         discreteSpace = new DiscreteSpace(37); // 40 Possible actions
         observationSpace = new ArrayObservationSpace<>(new int[] {22} );
     }
@@ -65,10 +57,9 @@ public class LoveLetterMDP implements MDP<LoveLetter, Integer, DiscreteSpace> {
             this.game.makeMove(integer+1);
             if(isDone())
             {
-                if(game.hasPlayedIllegalMove() || (game.getScore() == 0 && !trainIllegalMoves))
+                if(game.hasPlayedIllegalMove() || (game.getScore() == 0 ))
                 {
                     reward = -1;
-                    this.numIllegalMovesMade +=1;
                 }
                 else
                 {

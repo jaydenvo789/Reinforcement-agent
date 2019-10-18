@@ -35,10 +35,6 @@ public class LoveLetter implements Encodable
         this(System.currentTimeMillis(),agents, currentPlayerIndex);
     }
 
-    public LoveLetter()
-    {
-
-    }
     public boolean isOver()
     {
         return gameState.roundOver() || gameState.eliminated(currentPlayerIndex);

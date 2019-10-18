@@ -4,6 +4,11 @@
     <list default="true" id="4b3f91b4-8eb0-4449-9dbd-1511fabf2191" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Learn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Learn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LoveLetterMDP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LoveLetterMDP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vast" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vast.ai" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vast.ai.pub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vast.pub" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +41,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/backup" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
