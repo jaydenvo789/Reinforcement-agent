@@ -38,10 +38,10 @@ public class Learn {
 
     public static void main(String[] args) throws IOException {
         CudaEnvironment.getInstance().getConfiguration().allowMultiGPU(true);
-        train();
+        trainRandom();
     }
 
-    public static void train() throws IOException {
+    public static void trainRandom() throws IOException {
         DataManager dataManager = new DataManager(true);
         DQNFactoryStdDense.Configuration LOVE_NET =
                 DQNFactoryStdDense.Configuration.builder()
@@ -50,9 +50,10 @@ public class Learn {
                         .numHiddenNodes(512)
                         .numLayer(2)
                         .build();
-        Agent[] agents= new Agent[]{new ReinforcementAgent(),new ReinforcementAgent(),new ReinforcementAgent(),new ReinforcementAgent()};
+
+        Agent[] agents= new Agent[]{new ReinforcementAgent(),new RandomAgent(),new RandomAgent(),new RandomAgent()};
         Random rand = new Random(System.currentTimeMillis());
-        LoveLetter game = new LoveLetter(agents,rand.nextInt(4));
+        LoveLetter game = new LoveLetter(agents,0);
         LoveLetterMDP mdp = new LoveLetterMDP(game);
         QLearningDiscrete<LoveLetter> dql = new QLearningDiscreteDense<LoveLetter>(mdp, LOVE_NET, Love_QL, dataManager);
         dql.train();

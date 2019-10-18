@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b3f91b4-8eb0-4449-9dbd-1511fabf2191" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/loveletter.model" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/eliminated.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/loveletter.model" beforeDir="false" afterPath="$PROJECT_DIR$/backup/loveletter.model" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Learn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Learn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LoveLetterMDP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LoveLetterMDP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vast" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vast.ai" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vast.ai.pub" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vast.pub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Learn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Learn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoveLetterMDP.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LoveLetterMDP.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/loveletter/LoveLetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/loveletter/LoveLetter.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,17 +43,17 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backup" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/backup" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/backup" />
     </key>
   </component>
