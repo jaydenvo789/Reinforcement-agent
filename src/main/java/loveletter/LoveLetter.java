@@ -45,9 +45,9 @@ public class LoveLetter implements Encodable
         return hasPlayedIllegalMove;
     }
 
-    public int getScore()
+    public boolean hasPlayerWon()
     {
-        return gameState.score(currentPlayerIndex);
+        return gameState.roundWinner() == currentPlayerIndex;
     }
     /**
      * Plays move

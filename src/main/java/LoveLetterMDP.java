@@ -56,7 +56,7 @@ public class LoveLetterMDP implements MDP<LoveLetter, Integer, DiscreteSpace> {
             this.game.makeMove(integer+1);
             if(isDone())
             {
-                if(game.hasPlayedIllegalMove() || (game.getScore() == 0 ))
+                if(game.hasPlayedIllegalMove() || !game.hasPlayerWon())
                 {
                     reward = -1;
                 }
