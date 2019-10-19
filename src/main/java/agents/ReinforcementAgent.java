@@ -12,7 +12,7 @@ public class ReinforcementAgent implements Agent{
     Card drawedCard;
     public ReinforcementAgent() throws IOException
     {
-        dqn = DQNPolicy.load("loveletter.model");
+        dqn = DQNPolicy.load("loveletter-unweighted.model");
     }
     @Override
     public void newRound(State start) {
@@ -31,7 +31,7 @@ public class ReinforcementAgent implements Agent{
         INDArray observations = Nd4j.create(getObservation());
         Integer action = this.dqn.nextAction(observations.reshape(new long[] {1, observations.length()}));
 
-        return getAction(action);
+        return getAction(action + 1);
     }
 
     public double[] getObservation()
@@ -65,13 +65,13 @@ public class ReinforcementAgent implements Agent{
         for(int i = 0; i < remainingCards.length;i++)
         {
             newObservation[9] = remainingCards[i].value() == 1 ? ++ newObservation[9] : newObservation[9] ;
-            newObservation[10] = remainingCards[i].value() == 2 ? ++ newObservation[9] : newObservation[10] ;
-            newObservation[11] = remainingCards[i].value() == 3 ? ++ newObservation[9] : newObservation[11] ;
-            newObservation[12] = remainingCards[i].value() == 4 ? ++ newObservation[9] : newObservation[12] ;
-            newObservation[13] = remainingCards[i].value() == 5 ? ++ newObservation[9] : newObservation[13] ;
-            newObservation[14] = remainingCards[i].value() == 6 ? ++ newObservation[9] : newObservation[14] ;
-            newObservation[15] = remainingCards[i].value() == 7 ? ++ newObservation[9] : newObservation[15] ;
-            newObservation[16] = remainingCards[i].value() == 8 ? ++ newObservation[9] : newObservation[16] ;
+            newObservation[10] = remainingCards[i].value() == 2 ? ++ newObservation[10] : newObservation[10] ;
+            newObservation[11] = remainingCards[i].value() == 3 ? ++ newObservation[11] : newObservation[11] ;
+            newObservation[12] = remainingCards[i].value() == 4 ? ++ newObservation[12] : newObservation[12] ;
+            newObservation[13] = remainingCards[i].value() == 5 ? ++ newObservation[13] : newObservation[13] ;
+            newObservation[14] = remainingCards[i].value() == 6 ? ++ newObservation[14] : newObservation[14] ;
+            newObservation[15] = remainingCards[i].value() == 7 ? ++ newObservation[15] : newObservation[15] ;
+            newObservation[16] = remainingCards[i].value() == 8 ? ++ newObservation[16] : newObservation[16] ;
         }
 
         boolean opponentOneHandmaid = state.handmaid((currentPlayerIndex + 1) % numPlayers);

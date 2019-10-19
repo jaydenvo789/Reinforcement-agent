@@ -4,6 +4,7 @@ import org.deeplearning4j.rl4j.learning.sync.qlearning.QLearning;
 import org.deeplearning4j.rl4j.learning.sync.qlearning.discrete.QLearningDiscrete;
 import org.deeplearning4j.rl4j.learning.sync.qlearning.discrete.QLearningDiscreteDense;
 import org.deeplearning4j.rl4j.network.dqn.DQNFactoryStdDense;
+import org.deeplearning4j.rl4j.policy.DQNPolicy;
 import org.deeplearning4j.rl4j.util.DataManager;
 import org.nd4j.linalg.learning.config.RmsProp;
 import org.deeplearning4j.rl4j.network.dqn.DQN;
@@ -25,7 +26,7 @@ public class Learn {
                     16,    //Max step By epoch
                     1500000, //Max step
                     4000, //Max size of experience replay
-                    128,     //size of batches
+                    64,     //size of batches
                     500,    //target update (hard)
                     10,     //num step noop warmup
                     0.01,   //reward scaling
@@ -36,6 +37,15 @@ public class Learn {
                     true    //double DQN
             );
 
+    //Configuration for the Double Q network
+    public static   DQNFactoryStdDense.Configuration LOVE_NET =
+            DQNFactoryStdDense.Configuration.builder()
+                    .l2(0).updater(new
+                    RmsProp(0.001))
+                    .numHiddenNodes(512)
+                    .numLayer(2)
+                    .build();
+
     public static void main(String[] args) throws IOException {
         CudaEnvironment.getInstance().getConfiguration().allowMultiGPU(true);
         trainRandom();
@@ -43,14 +53,6 @@ public class Learn {
 
     public static void trainRandom() throws IOException {
         DataManager dataManager = new DataManager(true);
-        DQNFactoryStdDense.Configuration LOVE_NET =
-                DQNFactoryStdDense.Configuration.builder()
-                        .l2(0).updater(new
-                        RmsProp(0.001))
-                        .numHiddenNodes(512)
-                        .numLayer(2)
-                        .build();
-
         Agent[] agents= new Agent[]{new ReinforcementAgent(),new RandomAgent(),new RandomAgent(),new RandomAgent()};
         Random rand = new Random(System.currentTimeMillis());
         LoveLetter game = new LoveLetter(agents,0);
@@ -61,4 +63,5 @@ public class Learn {
         mdp.close();
         System.out.println("Illegal Move Training Complete!");
     }
+
 }

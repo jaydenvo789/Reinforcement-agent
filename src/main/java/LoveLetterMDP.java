@@ -13,14 +13,10 @@ public class LoveLetterMDP implements MDP<LoveLetter, Integer, DiscreteSpace> {
     public LoveLetterMDP(LoveLetter game)
     {
         this.game = game;
-        discreteSpace = new DiscreteSpace(37); // 40 Possible actions
+        discreteSpace = new DiscreteSpace(37); // 37 Possible actions
         observationSpace = new ArrayObservationSpace<>(new int[] {22} );
     }
 
-    public LoveLetterMDP()
-    {
-        this(null);
-    }
     @Override
     public ObservationSpace<LoveLetter> getObservationSpace()
     {

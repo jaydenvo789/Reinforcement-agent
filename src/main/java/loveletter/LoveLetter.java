@@ -295,13 +295,13 @@ public class LoveLetter implements Encodable
         for(int i = 0; i < remainingCards.length;i++)
         {
             newObservation[9] = remainingCards[i].value() == 1 ? ++ newObservation[9] : newObservation[9] ;
-            newObservation[10] = remainingCards[i].value() == 2 ? ++ newObservation[9] : newObservation[10] ;
-            newObservation[11] = remainingCards[i].value() == 3 ? ++ newObservation[9] : newObservation[11] ;
-            newObservation[12] = remainingCards[i].value() == 4 ? ++ newObservation[9] : newObservation[12] ;
-            newObservation[13] = remainingCards[i].value() == 5 ? ++ newObservation[9] : newObservation[13] ;
-            newObservation[14] = remainingCards[i].value() == 6 ? ++ newObservation[9] : newObservation[14] ;
-            newObservation[15] = remainingCards[i].value() == 7 ? ++ newObservation[9] : newObservation[15] ;
-            newObservation[16] = remainingCards[i].value() == 8 ? ++ newObservation[9] : newObservation[16] ;
+            newObservation[10] = remainingCards[i].value() == 2 ? ++ newObservation[10] : newObservation[10] ;
+            newObservation[11] = remainingCards[i].value() == 3 ? ++ newObservation[11] : newObservation[11] ;
+            newObservation[12] = remainingCards[i].value() == 4 ? ++ newObservation[12] : newObservation[12] ;
+            newObservation[13] = remainingCards[i].value() == 5 ? ++ newObservation[13] : newObservation[13] ;
+            newObservation[14] = remainingCards[i].value() == 6 ? ++ newObservation[14] : newObservation[14] ;
+            newObservation[15] = remainingCards[i].value() == 7 ? ++ newObservation[15] : newObservation[15] ;
+            newObservation[16] = remainingCards[i].value() == 8 ? ++ newObservation[16] : newObservation[16] ;
         }
 
         boolean opponentOneHandmaid = gameState.handmaid((currentPlayerIndex + 1) % numPlayers);
