@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b3f91b4-8eb0-4449-9dbd-1511fabf2191" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/loveletter.model" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loveletter.model" beforeDir="false" afterPath="$PROJECT_DIR$/loveletter.model" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Learn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Learn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LoveLetterMDP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LoveLetterMDP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agents/ReinforcementAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agents/ReinforcementAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/loveletter/LoveLetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/loveletter/LoveLetter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Learn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Learn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/LoveLetterMDP.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LoveLetterMDP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/agents/ReinforcementAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/agents/ReinforcementAgent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/loveletter/LoveLetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/loveletter/LoveLetter.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -150,6 +144,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/loveletter/State.java</url>
           <line>441</line>
           <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/loveletter/LoveLetter.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

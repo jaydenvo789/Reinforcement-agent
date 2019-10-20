@@ -40,7 +40,7 @@ public class Learn {
             new QLearning.QLConfiguration(
                     123,    //Random seed
                     20,    //Max step By epoch
-                    1000000, //Max step
+                    500000, //Max step
                     10000, //Max size of experience replay
                     64,     //size of batches
                     500,    //target update (hard)
@@ -48,7 +48,7 @@ public class Learn {
                     0.01,   //reward scaling
                     0.9,   //gamma
                     1.0,    //td-error clipping
-                    0.1f,   //min epsilon
+                    0.05f,   //min epsilon
                     50000,   //num step for eps greedy anneal
                     true    //double DQN
             );
@@ -64,11 +64,13 @@ public class Learn {
 
     public static void main(String[] args) throws IOException {
         CudaEnvironment.getInstance().getConfiguration().allowMultiGPU(true);
-//        trainRandom();
-        trainSelfPlay();
+//        trainIllegalMoves();
+//        trainSelfPlay(1);
+        trainRandom();
+//        trainSelfPlay(100);
     }
 
-    public static void trainRandom() throws IOException {
+    public static void trainIllegalMoves() throws IOException {
         DataManager dataManager = new DataManager(true);
         Agent[] agents= new Agent[]{new ReinforcementAgent("loveletter-unweighted.model"),new RandomAgent(),new RandomAgent(),new RandomAgent()};
         Random rand = new Random(System.currentTimeMillis());
@@ -81,19 +83,40 @@ public class Learn {
         System.out.println("Illegal Move Training Complete!");
     }
 
-    public static void trainSelfPlay() throws IOException
+    public static void trainSelfPlay(int numRounds) throws IOException
+    {
+        for(int i = 0 ; i <numRounds;i++) {
+            DataManager dataManager = new DataManager(true);
+            Agent[] agents = new Agent[]{
+                    new ReinforcementAgent("loveletter.model"),
+                    new ReinforcementAgent("loveletter.model"),
+                    new ReinforcementAgent("loveletter.model"),
+                    new ReinforcementAgent("loveletter.model")};
+            Random rand = new Random(System.currentTimeMillis());
+            LoveLetter game = new LoveLetter(agents, rand.nextInt(4));
+            LoveLetterMDP mdp = new LoveLetterMDP(game);
+            IDQN dqn = DQN.load("loveletter.model");
+            QLearningDiscrete<LoveLetter> dql = new QLearningDiscreteDense<>(mdp, dqn, Love_QL_Self_Play, dataManager);
+            dql.train();
+            dql.getPolicy().save("loveletter.model");
+            mdp.close();
+            System.out.println("Training Complete");
+        }
+    }
+
+    public static void trainRandom() throws IOException
     {
         DataManager dataManager = new DataManager(true);
         Agent[] agents = new Agent[]{
                 new ReinforcementAgent("loveletter.model"),
-                new ReinforcementAgent("loveletter.model"),
-                new ReinforcementAgent("loveletter.model"),
-                new ReinforcementAgent("loveletter.model")};
+                new RandomAgent(),
+                new RandomAgent(),
+                new RandomAgent()};
         Random rand = new Random(System.currentTimeMillis());
-        LoveLetter game = new LoveLetter(agents,rand.nextInt(4));
+        LoveLetter game = new LoveLetter(agents, rand.nextInt(0));
         LoveLetterMDP mdp = new LoveLetterMDP(game);
         IDQN dqn = DQN.load("loveletter.model");
-        QLearningDiscrete<LoveLetter> dql = new QLearningDiscreteDense<>(mdp,dqn,Love_QL_Self_Play,dataManager);
+        QLearningDiscrete<LoveLetter> dql = new QLearningDiscreteDense<>(mdp, dqn, Love_QL_Self_Play, dataManager);
         dql.train();
         dql.getPolicy().save("loveletter.model");
         mdp.close();
