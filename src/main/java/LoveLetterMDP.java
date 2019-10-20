@@ -49,7 +49,7 @@ public class LoveLetterMDP implements MDP<LoveLetter, Integer, DiscreteSpace> {
         //Somehow our client got eliminated before they could even make a move
         if(isDone())
         {
-            return new StepReply<LoveLetter>(this.game, 0, isDone(), null);
+            return new StepReply<LoveLetter>(this.game, 5, isDone(), null);
         }
         else
         {
@@ -78,7 +78,6 @@ public class LoveLetterMDP implements MDP<LoveLetter, Integer, DiscreteSpace> {
 
     @Override
     public MDP<LoveLetter, Integer, DiscreteSpace> newInstance() {
-
         return null;
     }
 }

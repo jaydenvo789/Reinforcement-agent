@@ -10,16 +10,16 @@ public class ReinforcementAgent implements Agent{
     DQNPolicy dqn;
     State state;
     Card drawedCard;
-    public ReinforcementAgent() throws IOException
+    public ReinforcementAgent(String path) throws IOException
     {
-        dqn = DQNPolicy.load("loveletter-unweighted.model");
+        dqn = DQNPolicy.load(path);
     }
     @Override
     public void newRound(State start) {
         this.state = start;
     }
 
-    public String toString(){return "Your Mum";}
+    public String toString(){return "Reinforcement-Learning";}
     @Override
     public void see(Action act, State results) {
         this.state = results;

@@ -57,7 +57,7 @@ public class LoveLetter implements Encodable
         try {
             boolean playerHasPlayed = false;
             Card topCard = null;
-            while(!gameState.roundOver())
+            while(!isOver())
             {
                 Action act = null;
                 try {
@@ -107,7 +107,7 @@ public class LoveLetter implements Encodable
     }
     /*
         All possible moves that can be played in the game are indexed by numbers from 1-40.
-        Given a integer , return the corresponding
+        Given a integer,return the corresponding
         action Object
      */
     public Action getAction(Integer move)
