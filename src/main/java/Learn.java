@@ -36,11 +36,27 @@ public class Learn {
                     10000,   //num step for eps greedy anneal
                     true    //double DQN
             );
-    public static QLearning.QLConfiguration Love_QL_Self_Play =
+    public static QLearning.QLConfiguration Love_QL_Illegal_moves =
             new QLearning.QLConfiguration(
                     123,    //Random seed
                     20,    //Max step By epoch
                     500000, //Max step
+                    10000, //Max size of experience replay
+                    64,     //size of batches
+                    500,    //target update (hard)
+                    10,     //num step noop warmup
+                    0.01,   //reward scaling
+                    0.9,   //gamma
+                    1.0,    //td-error clipping
+                    0.05f,   //min epsilon
+                    50000,   //num step for eps greedy anneal
+                    true    //double DQN
+            );
+    public static QLearning.QLConfiguration Love_QL_Self_Play =
+            new QLearning.QLConfiguration(
+                    123,    //Random seed
+                    20,    //Max step By epoch
+                    100000, //Max step
                     10000, //Max size of experience replay
                     64,     //size of batches
                     500,    //target update (hard)
@@ -66,8 +82,8 @@ public class Learn {
         CudaEnvironment.getInstance().getConfiguration().allowMultiGPU(true);
 //        trainIllegalMoves();
 //        trainSelfPlay(1);
-        trainRandom();
-//        trainSelfPlay(100);
+//        trainRandom();
+        trainSelfPlay(1);
     }
 
     public static void trainIllegalMoves() throws IOException {
@@ -113,7 +129,7 @@ public class Learn {
                 new RandomAgent(),
                 new RandomAgent()};
         Random rand = new Random(System.currentTimeMillis());
-        LoveLetter game = new LoveLetter(agents, rand.nextInt(0));
+        LoveLetter game = new LoveLetter(agents, 0);
         LoveLetterMDP mdp = new LoveLetterMDP(game);
         IDQN dqn = DQN.load("loveletter.model");
         QLearningDiscrete<LoveLetter> dql = new QLearningDiscreteDense<>(mdp, dqn, Love_QL_Self_Play, dataManager);
