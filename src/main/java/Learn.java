@@ -36,7 +36,7 @@ public class Learn {
                     10000,   //num step for eps greedy anneal
                     true    //double DQN
             );
-    public static QLearning.QLConfiguration Love_QL_Illegal_moves =
+    public static QLearning.QLConfiguration Love_QL_Illegal_moves_two =
             new QLearning.QLConfiguration(
                     123,    //Random seed
                     20,    //Max step By epoch
@@ -56,7 +56,7 @@ public class Learn {
             new QLearning.QLConfiguration(
                     123,    //Random seed
                     20,    //Max step By epoch
-                    100000, //Max step
+                    200000, //Max step
                     10000, //Max size of experience replay
                     64,     //size of batches
                     500,    //target update (hard)
@@ -83,7 +83,7 @@ public class Learn {
 //        trainIllegalMoves();
 //        trainSelfPlay(1);
 //        trainRandom();
-        trainSelfPlay(1);
+        trainSelfPlay(9);
     }
 
     public static void trainIllegalMoves() throws IOException {
@@ -132,7 +132,7 @@ public class Learn {
         LoveLetter game = new LoveLetter(agents, 0);
         LoveLetterMDP mdp = new LoveLetterMDP(game);
         IDQN dqn = DQN.load("loveletter.model");
-        QLearningDiscrete<LoveLetter> dql = new QLearningDiscreteDense<>(mdp, dqn, Love_QL_Self_Play, dataManager);
+        QLearningDiscrete<LoveLetter> dql = new QLearningDiscreteDense<>(mdp, dqn, Love_QL_Illegal_moves_two, dataManager);
         dql.train();
         dql.getPolicy().save("loveletter.model");
         mdp.close();

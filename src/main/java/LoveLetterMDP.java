@@ -54,17 +54,27 @@ public class LoveLetterMDP implements MDP<LoveLetter, Integer, DiscreteSpace> {
         else
         {
             this.game.makeMove(integer+1);
-            if(isDone())
+            if(integer == 36)
+	    {
+	    	reward = -99;
+		return new StepReply<LoveLetter>(this.game,reward,true,null);
+	    }	
+	    else  if(isDone())
             {
-                if(game.hasPlayedIllegalMove() || !game.hasPlayerWon())
+                if(game.hasPlayedIllegalMove())
                 {
-                    reward = -1;
+                    reward = -99;
                 }
+		else if(!game.hasPlayerWon())
+		{
+		    reward = -1;
+		}
                 else
                 {
-                    reward = 1;
+                    reward = game.getCard();
                 }
             }
+	   
             return new StepReply<LoveLetter>(this.game, reward, isDone(), null);
         }
 
